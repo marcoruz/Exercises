@@ -10,3 +10,17 @@
   become: yes
   roles:
     - nodejs_app
+
+
+ - name: Beispiel Playbook
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: verschlüsselte Variablen
+      include_vars:
+        file: vars/credentials.yml
+        name: credentials
+    - name: Debug-Ausgabe der AWS-Credentials
+      debug:
+        var: credentials
+
