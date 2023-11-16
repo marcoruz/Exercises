@@ -1,0 +1,73 @@
+{
+  "name": "graphing-calculator",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.11.3",
+    "@material-ui/icons": "^4.11.2",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.1.1",
+    "@types/jest": "^27.0.1",
+    "@types/memoizee": "^0.4.5",
+    "@types/node": "^17.0.25",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "@types/react-mathquill": "^0.2.3",
+    "comlink-loader": "^2.0.0",
+    "math-expressions": "^2.0.0-alpha32",
+    "mathjs": "^10.5.0",
+    "memoizee": "^0.4.15",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-mathquill": "^1.0.1",
+    "react-scripts": "5.0.1",
+    "sass": "^1.50.1",
+    "typescript": "^4.4.2",
+    "web-vitals": "^2.1.0",
+    "yarn": "^1.22.19"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --watchAll=false --passWithNoTests",
+    "posttest": "yarn run eslint",
+    "eject": "react-scripts eject",
+    "eslint": "eslint ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "canvas": "^2.9.1",
+    "eslint": "^8.14.0"
+  },
+  "resolutions": {
+    "react-error-overlay": "6.0.11"
+  },
+  "jest": {
+    "transformIgnorePatterns": [
+      "\\.pnp\\.[^\\/]+$"
+    ],
+    "moduleNameMapper": {
+      "comlink-loader!./EvaluateExpressionWorker": "<rootDir>/src/workers/mock.ts"
+    }
+  }
+}

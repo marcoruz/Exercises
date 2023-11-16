@@ -1,0 +1,51 @@
+---
+- name: Intro to Ansible Playbooks
+  hosts: all
+
+  tasks:
+  - name: Add the user 'foo'
+    ansible.builtin.user:
+      name: foo
+    become: yes
+    become_method: sudo
+  - name: upgrade all packages
+    dnf:
+      name: '*'
+      state: latest
+    become: yes
+
+  - name: install the latest version of nano
+    dnf:
+      name: nano
+      state: latest
+    become: yes
+
+  - name: install the latest version of vim
+    dnf:
+      name: vim
+      state: latest
+    become: yes
+
+  - name: install the latest version of Apache
+    dnf:
+      name: httpd
+      state: latest
+    become: yes
+
+  - name: Create Web Root directory
+    file:
+      path: /var/www/html    # Ersetze durch den tatsächlichen Pfad zum Web Root-Ordner
+      state: directory
+
+  - name: Copy index.html to Web Root
+    ansible.builtin.copy:
+      src: /home/debian/ansible-intro/index.html
+      dest: /var/www/html/index.html
+    become: yes  
+
+  - name: Start Apache service
+    ansible.builtin.service:
+      name: httpd
+      state: started
+      enabled: yes
+    become: yes
